@@ -9,9 +9,9 @@ client = genai.Client(api_key=api_key)
 response = client.models.generate_content(
     model='gemini-2.0-flash-001', contents='Where can I find spice on Arrakis?'
 )
+prompt_token_count = response.usage_metadata.prompt_token_count
+prompt_response_count = response.usage_metadata.candidates_token_count
 
 print(response.text)
-prompt_token_count = response.usage_metadata.prompt_token_count
 print(f"Prompt tokens: {prompt_token_count}")
-prompt_response_count = response.usage_metadata.candidates_token_count
 print(f"Response tokens: {prompt_response_count}")
