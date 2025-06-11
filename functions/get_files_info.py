@@ -18,5 +18,5 @@ def get_files_info(working_directory, directory=None):
         file_size = os.path.getsize(abs_file)
         is_file = os.path.isfile(abs_file)
         string_builder.append(f"- {file}: {file_size}, {is_file}")
-    print(string_builder)
+    print(" ".join(string_builder))
     return " ".join(string_builder)
